@@ -30,8 +30,8 @@ input[type="text"]{
 	height: 100%;
 	width: 100%;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
-	padding: 10px;
 	background-color: #e6ee9c;
 }
 
@@ -40,8 +40,8 @@ input[type="text"]{
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	height: 400px;
-	width: 400px;
+	height: 375px;
+	width: 375px;
 	margin: 20px;
 	border-radius: 5px;
 	box-shadow: 3px 3px 3px gray; 
