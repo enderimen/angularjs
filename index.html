@@ -43,13 +43,20 @@
 			<!--ng-model--> 
 			<p>Net Hesaplama</p>
 
-			<input type="text" ng-model="dogruSayisi">
-			<input type="text" ng-model="yanlisSayisi">
+			<input type="text" ng-model="dogruSayisi" placeholder="Doğru Sayısı">
+			<input type="text" ng-model="yanlisSayisi" placeholder="Yanlış Sayısı">
 			
 			<p>Net Sayısı: {{dogruSayisi - yanlisSayisi/4}}</p>
 
 		</div>
-		<div class="kutu kirmizi"></div>
+		<div class="kutu kirmizi">
+			
+			<!--ng-init-->
+
+			<p ng-bind="deger"></p><br>
+			<input type="text" ng-value="deger"><br>
+
+		</div>
 		<div class="kutu sari"></div>
 		<div class="kutu turuncu"></div>
 		<div class="kutu yesil"></div>
