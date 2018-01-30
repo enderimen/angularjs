@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>Angular JS | Örnekler</title>
+	
+	<!--Js-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+		<script>
+			var myController = angular.module("angular",[]);
+
+			myController.controller("myControl",function ($scope) {
+				$scope.cumle = "Merhaba Angular"; 
+				$scope.paragraf = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, similique."; 
+				$scope.mesaj = function () {
+
+					alert("Angular js öğreniyorum!");
+				}; 
+				
+			});
+		</script>
+
+		<script src="https://use.fontawesome.com/a97cb26257.js"></script>
+
+		<script type="text/javascript" src="js/customize.js"></script>
+	<!--Js End-->
+	
+	<!--CSS -->		
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--CSS End-->
+</head>
+<body ng-app="angular" ng-controller="myControl" ng-init="deger='angular kullanışlı bir js kütüphanesidir'">
+
+	
+	<div class="header">
+		<h3>Angular JS Örnekleri</h3>
+	</div>
+	<div class="container">
+		<div class="kutu mavi"></div>
+		<div class="kutu kirmizi"></div>
+		<div class="kutu sari"></div>
+		<div class="kutu turuncu"></div>
+		<div class="kutu yesil"></div>
+		<div class="kutu mavi"></div>
+		<div class="kutu kirmizi"></div>
+	</div>
+</body>
+</html>
