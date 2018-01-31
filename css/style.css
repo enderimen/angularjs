@@ -48,6 +48,12 @@ input[type="text"]{
 	flex-grow: 1;
 }
 
+.kutu li{
+	list-style-type: none;
+	margin: 3px;
+	border-style: solid;
+}
+
 .mavi{
 	background-color: #90caf9;
 }

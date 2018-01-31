@@ -11,14 +11,20 @@
 		<script>
 			var myController = angular.module("angular",[]);
 
-			myController.controller("myControl",function ($scope) {
+			myController.controller("myControl",function ($scope,$http) {
+
 				$scope.cumle = "Merhaba Angular"; 
 				$scope.paragraf = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, similique."; 
+				
 				$scope.mesaj = function () {
 
 					alert("Angular js öğreniyorum!");
 				}; 
 				
+				//URL si verilen adrese git işlem başarılı ise ilgili alanları çek 
+				$http.get('https://jsonplaceholder.typicode.com/posts/1/comments').then(function (response) {
+					$scope.veriler = response.data;
+				})
 			});
 		</script>
 
@@ -57,7 +63,14 @@
 			<input type="text" ng-value="deger"><br>
 
 		</div>
-		<div class="kutu sari"></div>
+		<div class="kutu sari">
+			<ul>
+				<li ng-repeat="data in veriler">e-mail : {{data.email}}</li>
+			</ul>
+			<ul>
+				<li ng-repeat="data in veriler">İsim : {{data.name}}</li>
+			</ul>
+		</div>
 		<div class="kutu turuncu"></div>
 		<div class="kutu yesil"></div>
 		<div class="kutu mavi"></div>
