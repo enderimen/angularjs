@@ -11,6 +11,12 @@
 
 input[type="text"]{
 	border-radius: 5px;
+	height: 40px;
+	width: 60%;
+}
+
+input[type="button"]{
+	border:none;
 	height: 50px;
 	width: 60%;
 }
@@ -51,7 +57,8 @@ input[type="text"]{
 .kutu li{
 	list-style-type: none;
 	margin: 3px;
-	border-style: solid;
+	padding: 3px; 
+	border-radius: 5px;
 }
 
 .mavi{

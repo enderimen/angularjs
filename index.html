@@ -15,7 +15,7 @@
 
 				$scope.cumle = "Merhaba Angular"; 
 				$scope.paragraf = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, similique."; 
-				
+				$scope.sayac = 0;
 				$scope.mesaj = function () {
 
 					alert("Angular js öğreniyorum!");
@@ -64,15 +64,33 @@
 
 		</div>
 		<div class="kutu sari">
+			<input type="text" placeholder="Maillerde ara" ng-model="aranan">
+
 			<ul>
-				<li ng-repeat="data in veriler">e-mail : {{data.email}}</li>
+				<li ng-repeat="data in veriler | filter:aranan">
+					<span>
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					</span>{{data.email}}
+				</li>
 			</ul>
 			<ul>
-				<li ng-repeat="data in veriler">İsim : {{data.name}}</li>
+				<li ng-repeat="data in veriler">
+					<span>
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</span>{{data.name}}
+				</li>
 			</ul>
 		</div>
-		<div class="kutu turuncu"></div>
-		<div class="kutu yesil"></div>
+		<div class="kutu turuncu">
+			<input type="button" ng-click="mesaj()" value="Mesaj">
+		</div>
+		<div class="kutu yesil">
+			<p ng-style="sayac==5 && {'color':'white','background':'orange'}">Angular JS</p>
+			
+			<p>{{sayac}}</p>
+			
+			<input type="button" ng-click="sayac=sayac+1" value="Artır">
+		</div>
 		<div class="kutu mavi"></div>
 		<div class="kutu kirmizi"></div>
 	</div>
