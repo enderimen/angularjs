@@ -68,7 +68,8 @@
 	<div class="container">
 		<div class="kutu mavi">
 			
-			<!--ng-model--> 
+			<pre class="baslik">ng-model Kullanımı</pre>
+
 			<p>Net Hesaplama</p>
 
 			<input type="text" ng-model="dogruSayisi" placeholder="Doğru Sayısı">
@@ -79,13 +80,14 @@
 		</div>
 		<div class="kutu kirmizi">
 			
-			<!--ng-init-->
+			<pre class="baslik">ng-bind Kullanımı</pre>
 
 			<p ng-bind="deger"></p><br>
 			<input type="text" ng-value="deger"><br>
 
 		</div>
 		<div class="kutu sari">
+			<pre class="baslik">ng-repeat & filter Kullanımı</pre>
 			<input type="text" placeholder="Maillerde ara" ng-model="aranan">
 
 			<ul>
@@ -105,10 +107,12 @@
 		</div>
 
 		<div class="kutu turuncu">
+			<pre class="baslik">ng-click Kullanımı</pre>
 			<input type="button" ng-click="mesaj()" value="Mesaj">
 		</div>
 		
 		<div class="kutu yesil">
+			<pre class="baslik">ng-style Kullanımı</pre>
 			<p ng-style="sayac==5 && {'color':'white','background':'orange'}">Angular JS</p>
 
 			<p>{{sayac}}</p>
@@ -118,12 +122,14 @@
 		</div>
 		
 		<div class="kutu mavi">
+			<pre class="baslik">ng-bind-html Kullanımı</pre>
 			<input type="text" placeholder="Ör:<h2>Angular</h2>" ng-model="veri">
 			<input type="button" value="Tagları Temizle" ng-click="ayristir(veri)">
 			<div ng-bind-html="tag"></div>
 		</div>
 
 		<div class="kutu kirmizi">
+			<pre class="baslik">filter Kullanımı</pre>
 			<input type="text" ng-model="filtre" placeholder="Borcu Giriniz">	
 			<ul>
 				<li>Borcu {{filtre}} TL nin altında olan kişiler</li>
