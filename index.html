@@ -17,9 +17,24 @@
 				$scope.paragraf = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, similique."; 
 				$scope.sayac = 0;
 
+				$scope.isimler = [];
+
+				$scope.kisiler = [
+					{"ad":"Ender","borc":50},
+					{"ad":"Ali","borc":150},
+					{"ad":"Erdi","borc":555},
+					{"ad":"Hakan","borc":20}];
+
+				$scope.filtrele = function ($filtre) {
+					
+					$scope.isimler = $scope.kisiler.filter(function (a) {
+						return a.borc < $filtre;
+					});
+				}
+
 				$scope.ayristir=function ($veri) {
 
-					$scope.tag = $sce.trustAsHtml($veri);				
+					$scope.tag = $sce.trustAsHtml($veri);			
 			
 				}
 
@@ -88,9 +103,11 @@
 				</li>
 			</ul>
 		</div>
+
 		<div class="kutu turuncu">
 			<input type="button" ng-click="mesaj()" value="Mesaj">
 		</div>
+		
 		<div class="kutu yesil">
 			<p ng-style="sayac==5 && {'color':'white','background':'orange'}">Angular JS</p>
 
@@ -99,12 +116,21 @@
 			<input type="button" ng-click="sayac=sayac+1" value="Artır">
 			<input type="button" ng-click="sayac=sayac-1" value="Azalt">
 		</div>
+		
 		<div class="kutu mavi">
 			<input type="text" placeholder="Ör:<h2>Angular</h2>" ng-model="veri">
 			<input type="button" value="Tagları Temizle" ng-click="ayristir(veri)">
 			<div ng-bind-html="tag"></div>
 		</div>
-		<div class="kutu kirmizi"></div>
+
+		<div class="kutu kirmizi">
+			<input type="text" ng-model="filtre" placeholder="Borcu Giriniz">	
+			<ul>
+				<li>Borcu {{filtre}} TL nin altında olan kişiler</li>
+				<li ng-repeat="x in isimler"> > {{x.ad }} {{x.borc}}</li>
+			</ul>		
+			<input type="button" value="Sonuçları Göster" ng-click="filtrele(filtre)">
+		</div>
 	</div>
 </body>
 </html>
