@@ -11,11 +11,18 @@
 		<script>
 			var myController = angular.module("angular",[]);
 
-			myController.controller("myControl",function ($scope,$http) {
+			myController.controller("myControl",function ($scope,$http,$sce) {
 
 				$scope.cumle = "Merhaba Angular"; 
 				$scope.paragraf = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, similique."; 
 				$scope.sayac = 0;
+
+				$scope.ayristir=function ($veri) {
+
+					$scope.tag = $sce.trustAsHtml($veri);				
+			
+				}
+
 				$scope.mesaj = function () {
 
 					alert("Angular js öğreniyorum!");
@@ -92,7 +99,11 @@
 			<input type="button" ng-click="sayac=sayac+1" value="Artır">
 			<input type="button" ng-click="sayac=sayac-1" value="Azalt">
 		</div>
-		<div class="kutu mavi"></div>
+		<div class="kutu mavi">
+			<input type="text" placeholder="Ör:<h2>Angular</h2>" ng-model="veri">
+			<input type="button" value="Tagları Temizle" ng-click="ayristir(veri)">
+			<div ng-bind-html="tag"></div>
+		</div>
 		<div class="kutu kirmizi"></div>
 	</div>
 </body>
